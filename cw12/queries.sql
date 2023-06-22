@@ -25,3 +25,8 @@ join language on film.language_id = language.language_id
 join film_category on film.film_id = film_category.film_id
 join category on film_category.category_id = category.category_id;
 
+select customer.first_name,customer.last_name,film.title,(return_date - rental_date) as rental_duration
+from customer
+join rental on customer.customer_id = rental.customer_id
+join inventory on rental.inventory_id = inventory.inventory_id
+join film on inventory.film_id = film.film_id;
