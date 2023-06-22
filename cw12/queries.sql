@@ -13,3 +13,10 @@ select category.name, count(*) as category_count from film
 join film_category on film.film_id = film_category.film_id
 join category on film_category.category_id = category.category_id
 group by category.name;
+
+select category.name, count(*) as category_count from film
+join film_category on film.film_id = film_category.film_id
+join category on film_category.category_id = category.category_id
+group by category.name
+having count(*) >= 60 and count(*) <= 68;
+
