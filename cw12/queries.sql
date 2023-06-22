@@ -30,3 +30,6 @@ from customer
 join rental on customer.customer_id = rental.customer_id
 join inventory on rental.inventory_id = inventory.inventory_id
 join film on inventory.film_id = film.film_id;
+
+select title, length from film
+where length > (select avg(length) from film);
