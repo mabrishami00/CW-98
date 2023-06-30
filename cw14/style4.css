@@ -1,0 +1,33 @@
+a:first-of-type {
+    text-decoration: none;
+    color: #000;
+}
+
+a:first-of-type:active {
+    color: red;
+  }
+  
+a:first-of-type:visited {
+    color: green;
+  }
+  
+a:first-of-type:hover {
+    color: blue;
+  }
+
+a:nth-of-type(2) {
+    text-decoration: none;
+    color: blue;
+  }
+
+a:nth-of-type(2):active{
+   color: yellow; 
+  }
+
+a:nth-of-type(2):visited{
+    color: green;
+  }
+
+a:nth-of-type(2):hover{
+    color: red;
+  }
