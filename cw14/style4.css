@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 a:first-of-type {
     text-decoration: none;
     color: #000;
