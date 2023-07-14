@@ -18,7 +18,13 @@ class Comment(models.Model):
     content = models.CharField(max_length=255)
     date = models.DateField()
 
+    def __str__(self):
+        return f"{self.author}"
+
 
 class Author(models.Model):
     name = models.CharField(max_length=255)
     bio = models.TextField()
+
+    def __str__(self):
+        return f"{self.name}"
