@@ -16,6 +16,7 @@ def post_details(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, "post_details.html", {"post": post})
 
+
 def author_list(request):
     authors = Author.objects.all()
     return render(request, "author_list.html", {"authors": authors})
