@@ -4,13 +4,29 @@
     <div class="container">
         <h1 class="mb-4">All Posts</h1>
         <div class="row">
-                <div class="col-md-6">
+                <div class="col-12">
                     <div class="card mb-3">
                         <div class="card-body">
                             <h5 class="card-title">{{ post.title }}</h5>
                             <p class="card-text">{{ post.content }}</p>
                             <p class="card-text">Author: {{ post.author }}</p>
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}" alt="{{ post.title }}" style="width: 50%;">
+                            {% endif %}
                             <p class="card-text">Publication Date: {{ post.publication_date }}</p>
+                            <h2>Comments</h2>
+                            <div class="row">
+                            {% for comment in post.comments.all %}
+                                <div class="col-12">
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ comment.author }}</h5>
+                                            <p class="card-text">{{ comment.content }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}                           
+                            </div>
                         </div>
                     </div>
                 </div>
