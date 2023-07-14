@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, show_post
+from .views import home, post_list
 
 
-urlpatterns = [path("", home), path("post/", show_post)]
+urlpatterns = [path("home/", home), path("post/", post_list)]
