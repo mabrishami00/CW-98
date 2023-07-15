@@ -7,6 +7,7 @@ from Categoryapp.models import Category
 class Author(models.Model):
     name = models.CharField(max_length=255)
     bio = models.TextField()
+    # image = models.ImageField(upload_to="post_images/", null=True, blank=True)
 
     def __str__(self):
         return f"{self.name}"
@@ -16,7 +17,9 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     content = models.CharField(max_length=255)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True, related_name="posts"
+    )
     publication_date = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to="post_images/", null=True, blank=True)
 
